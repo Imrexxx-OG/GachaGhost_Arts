@@ -1,0 +1,135 @@
+/* styling of the different body categories */
+.banner-body, .billboard-body, .album-body, .magazine-body {
+  font-family: 'Oswald', sans-serif;
+  background-color: rgba(14, 13, 13, 0.925);
+  margin-left: 60px;
+  padding: 4px;
+  user-select: none;
+
+}
+
+
+/* Navigation styling */
+nav ul, h1 {
+  color: #fff;
+  list-style: none;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+h1{
+  color: #ff0000;
+  font-weight: 200;
+}
+
+#bolden-it{
+  font-weight: 600;
+  padding: 0 9px ;
+  color: #fff;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  transition: color 0.3s ease; 
+}
+
+nav a:hover {
+  color: #ff0000; 
+  background-color: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Container for images */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: auto;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+/* Image styling */
+.container img {
+  flex: 1;
+  width: 25%;
+  height: auto;
+  border: 2px solid #ff0000; 
+  border-radius: 10px;
+  transition: transform 0.3s ease; 
+}
+
+
+#banner-container img{
+  max-width: 300px;
+  max-height: 100px;
+
+}
+
+#album-container img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#billboard-container img{
+  max-width: 300px;
+  max-height: 150px;
+}
+
+#magazine-container img{
+  max-width: 200px;
+  max-height: 229px;
+}
+
+.container img:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: 70vh;
+  object-fit: contain;
+}
+
+.modal-footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#downloadBtn {
+  cursor: pointer;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}

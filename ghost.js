@@ -1,0 +1,6 @@
+const navBar = document.getElementById('nav-bar');
+const exploreBtn = document.getElementById('explore-btn');
+
+exploreBtn.addEventListener("click", function() {
+  navBar.classList.toggle('hide-nav')
+})
