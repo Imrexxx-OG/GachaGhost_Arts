@@ -10,6 +10,7 @@
   user-select: none;
   padding: auto 20px;
   margin: 20px 20px;
+  overflow-x: hidden;
 }
 
 
@@ -23,6 +24,7 @@ h1, ul, li {
 #nav-bar {
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   transition: transform 1s ease-in-out;
 }

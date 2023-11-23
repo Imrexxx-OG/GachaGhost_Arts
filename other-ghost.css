@@ -5,6 +5,7 @@
   margin-left: 60px;
   padding: 4px;
   user-select: none;
+  overflow-x: hidden;
 
 }
 
@@ -16,6 +17,7 @@ nav ul, h1 {
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
   align-items: center;
   justify-content: center;
   

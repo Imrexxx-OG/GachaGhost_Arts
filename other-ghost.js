@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const downloadBtn = document.getElementById('downloadBtn');
-  let currentImageSrc = ''; // Variable to store the high quality source
+  let currentImageSrc = ''; // Variable to store the high-quality source
 
   progressiveImages.forEach(image => {
     image.addEventListener('click', function () {
       const lowQualitySrc = this.src;
-      currentImageSrc = this.dataset.src; // Store the high quality source
-      modalImage.src = lowQualitySrc;
+      currentImageSrc = this.dataset.src; // Store the high-quality source
+      modalImage.src = currentImageSrc; // Use the high-quality source for preview
       modal.style.display = 'block';
     });
   });
@@ -35,6 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Reset modal state
     modal.style.display = 'none';
     modalImage.src = '';
-    currentImageSrc = ''; // Reset the high quality source
+    currentImageSrc = ''; // Reset the high-quality source
   });
 });
