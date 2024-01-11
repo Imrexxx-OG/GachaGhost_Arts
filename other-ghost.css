@@ -2,8 +2,7 @@
 .banner-body, .billboard-body, .album-body, .magazine-body {
   font-family: 'Oswald', sans-serif;
   background-color: rgba(14, 13, 13, 0.925);
-  margin-left: 60px;
-  padding: 4px;
+  margin: 0;
   user-select: none;
   overflow-x: hidden;
 
@@ -15,33 +14,36 @@ nav ul, h1 {
   color: #fff;
   list-style: none;
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
   
 }
 
 h1{
   color: #ff0000;
   font-weight: 200;
+  font-size: 1.75rem;
+  margin: 0;
 }
 
 #bolden-it{
   font-weight: 600;
-  padding: 0 9px ;
+  padding: 0 0.7em ;
   color: #fff;
 }
 
 nav li {
-  margin-right: 20px;
+  margin-right: 1em;
 }
 
 nav a {
   text-decoration: none;
   color: #fff;
-  padding: 10px;
+  padding: 0.625em;
   transition: color 0.3s ease; 
 }
 
@@ -56,19 +58,20 @@ nav a:hover {
 .container {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
   gap: 5px;
   flex-wrap: wrap;
   flex-direction: column;
   padding: auto;
-  margin: 10px auto;
+  margin: 5px 0;
   overflow: hidden;
 }
 
 /* Image styling */
 .container img {
   flex: 1;
-  width: 25%;
+  width: 100%;
   height: auto;
   border: 2px solid #ff0000; 
   border-radius: 10px;
@@ -77,24 +80,24 @@ nav a:hover {
 
 
 #banner-container img{
-  max-width: 300px;
-  max-height: 100px;
+  max-width: 80%;
+  max-height: auto;
 
 }
 
 #album-container img{
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 80%;
+  max-height: auto;
 }
 
 #billboard-container img{
-  max-width: 300px;
-  max-height: 150px;
+  max-width: 80%;
+  max-height: auto;
 }
 
 #magazine-container img{
-  max-width: 200px;
-  max-height: 229px;
+  max-width: 80%;
+  max-height: 80%;
 }
 
 .container img:hover {
@@ -117,7 +120,7 @@ nav a:hover {
 .modal-content {
   display: block;
   margin: 0 auto;
-  width: auto;
+  width: 70%;
   height: 70vh;
   object-fit: contain;
 }
@@ -134,4 +137,85 @@ nav a:hover {
   border: none;
   border-radius: 10px;
   padding: 10px;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (max-width: 767px) {
+  header {
+      text-align: center;
+  }
+
+  nav {
+      margin-top: 1em;
+  }
+
+  .modal-content {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+
+}
+
+@media (min-width: 768px) {
+  header,
+  main {
+      padding: 2.875em 0;        
+  }
+  
+  header .container,
+  nav ul {
+      display: flex;
+  }
+  
+  header .container {
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  nav li {
+      margin-left: 1em;
+  }
+  
+  
+  h1 {
+      font-size: 2.25rem;
+  }
+
+  .container img {
+    flex: 1;
+    width: 30%;
+    height: auto;
+    border: 2px solid #ff0000; 
+    border-radius: 10px;
+    transition: transform 0.3s ease; 
+  }
+
+  
+#banner-container img{
+  max-width: 300px;
+  max-height: 100px;
+
+}
+
+#album-container img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#billboard-container img{
+  max-width: 300px;
+  max-height: 150px;
+}
+
+#magazine-container img{
+  max-width: 200px;
+  max-height: 229px;
+}
+
+  
 }
