@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 /* styling of the different body categories */
 .banner-body, .billboard-body, .album-body, .magazine-body {
   font-family: 'Oswald', sans-serif;
@@ -64,7 +68,7 @@ nav a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   padding: auto;
-  margin: 5px 0;
+  margin: 0.5em 1em;
   overflow: hidden;
 }
 
@@ -164,7 +168,7 @@ nav a:hover {
 @media (min-width: 768px) {
   header,
   main {
-      padding: 2.875em 0;        
+      padding: 1rem 0;        
   }
   
   header .container,
@@ -184,6 +188,10 @@ nav a:hover {
   
   h1 {
       font-size: 2.25rem;
+  }
+
+  .container {
+    margin: 0 1em;
   }
 
   .container img {
