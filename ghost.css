@@ -1,114 +1,125 @@
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.main-body {
+body {
   font-family: 'Oswald', sans-serif;
+  background: url('/artworks/20230606_212729.jpg') no-repeat center/cover;
+  background-attachment: fixed;
   color: white;
-  background-image: url('/artworks/20230606_212729.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed; 
-  background-color: rgba(17, 16, 16, 0.993);
-  user-select: none;
-  padding: auto 20px;
-  margin: 20px 20px;
   overflow-x: hidden;
 }
 
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-h1, ul, li {
-  padding: 0;
-  margin: 0;
+/* Navbar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-bar a:hover {
+  background: white;
+  color: red;
+  border-radius: 5px;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+  }
+
+  .nav-bar.active {
+    display: flex;
+  }
+}
+
+/* Centered Content */
+.centered-content {
+  max-width: 80%; /* Give it more flexibility */
+  width: 700px; /* Set a fixed width so it doesn’t shrink too much */
+  margin: 50px auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  font-size: 18px;
+  line-height: 1.5; /* Better readability */
+  border-radius: 10px;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
   color: white;
 }
 
-
-#nav-bar {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  transition: transform 1s ease-in-out;
-}
-
-.hide-nav {
-  transform: translateX(-100%); /* Move the nav off-screen */
-}
-
-/* Style for the "Explore" button */
+/* Button Styling */
 #explore-btn {
-  font-family: 'Oswald', sans-serif;
-  cursor: pointer;
-  background-color: white;
+  background: white;
   color: black;
-  border: none;
-  border-radius: 7px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 10px 15px;
   font-weight: bold;
-  box-shadow: 1px 1px 5px 1px #131111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #explore-btn:hover {
-  color: #fff;
-  background-color: #ff0000;
-}
-
-button:active{
-  box-shadow: 1px 1px 10px 1px #fb923c;
-} 
-
-.centered-content {
-  max-width: 70%;
-  text-align: center;
-  max-width: 600px; 
-  margin: 10px auto;
-  padding: 20px;
-  background-image: url('/artworks/20230606_212729.jpg');
-  background-color: rgba(0, 0, 0, 0.7); 
-  border-radius: 10px;
-  margin-top: 50px; 
-}
-
-
-
-
-
-/* Header styling */
-#gacha {
-  color: #ff0000;
-  padding:0px;
-  text-shadow: black;
-}
-
-/* Navigation styling */
-nav ul {
-  list-style: none;
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  
-}
-
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  padding: 10px;
-  transition: color 0.3s ease; 
-}
-
-nav a:hover {
-  color: #ff0000; 
-  background-color: #fff;
-  border-radius: 8px;
-  border: none;
+  background: red;
+  color: white;
 }
