@@ -1,0 +1,433 @@
+/* ============================================
+   GachaGhost Arts — unified stylesheet
+   Replaces ghost.css + other-ghost.css
+   ============================================ */
+
+:root {
+  --bg: #0a0908;
+  --bg-card: #151212;
+  --ink: #f2efe9;
+  --ink-dim: #a39c94;
+  --red: #e11d2e;
+  --red-dim: #7a1019;
+  --border: rgba(225, 29, 46, 0.35);
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Subtle scanline / texture on the whole page so flat black doesn't feel bare */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Header / Nav ---------- */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: rgba(10, 9, 8, 0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand .ghost-mark {
+  color: var(--red);
+  font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.4rem 0.65rem;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--ink);
+  background: rgba(225, 29, 46, 0.12);
+}
+
+nav a.active {
+  color: var(--ink);
+  background: var(--red);
+}
+
+@media (max-width: 760px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 9, 8, 0.97);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  nav.open {
+    max-height: 320px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  nav a {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Page intro ---------- */
+
+.page-intro {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 2.5rem auto 0.5rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.page-intro h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  letter-spacing: 0.02em;
+}
+
+.page-intro h1 .accent {
+  color: var(--red);
+}
+
+.page-intro p {
+  margin-top: 0.6rem;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------- Gallery grid ---------- */
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 1.5rem auto 4rem;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.container figure {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: saturate(0.92);
+}
+
+.container figure:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.container figure::after {
+  content: '\2197'; /* small arrow, signals "expand" */
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(10, 9, 8, 0.75);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.container figure:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container img.is-loading {
+  filter: blur(8px) saturate(0.8);
+}
+
+/* ---------- Lightbox / modal ---------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(6, 5, 5, 0.94);
+  padding: 2rem 1rem;
+  overflow: auto;
+}
+
+.modal.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  max-width: min(90vw, 900px);
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 0 60px rgba(225, 29, 46, 0.15);
+}
+
+.close {
+  position: fixed;
+  top: 1.1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close:hover {
+  color: var(--red);
+}
+
+.modal-footer {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+#downloadBtn {
+  cursor: pointer;
+  background: var(--red);
+  color: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease;
+}
+
+#downloadBtn:hover {
+  background: #ff2e42;
+}
+
+/* ---------- Home page ---------- */
+
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 4rem auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.hero .ghost-mark {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: 0.02em;
+}
+
+.hero h1 .accent {
+  color: var(--red);
+}
+
+.hero p {
+  margin-top: 1.1rem;
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.hero-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-links a:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* ---------- Focus visibility (accessibility) ---------- */
+
+a:focus-visible,
+button:focus-visible,
+.container figure:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}

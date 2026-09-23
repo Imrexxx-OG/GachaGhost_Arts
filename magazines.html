@@ -1,54 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="other-ghost.css">
-    <title>Magazines</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazines — GachaGhost Arts</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="magazine-body">
-    <header>
-        <h1 class="welcome-header">MAGAZINE ARCHIEVE</h1>
-        <nav>
-            <ul>
-                <li><a href="magazines.html">MAGAZINES</a></li>
-                <li><a href="banners.html">BANNERS</a></li>
-                <li><a href="billboards.html">BILLBOARDS</a></li>
-                <li><a href="albums.html">ALBUMS</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <div id="magazine-container">
-                <img class="progressive-img" src="Magazines/MG_Ali LQ.jpg" data-src="Magazines/MG_Ali.jpg" alt="Magazine 1">
-                <img class="progressive-img" src="Magazines/MG_Beetle LQ.jpg" data-src="Magazines/MG_Beetle.jpg" alt="Magazine 2">
-                <img class="progressive-img" src="Magazines/MG_Dremill LQ.jpg" data-src="Magazines/MG_Dremill.jpg" alt="Magazine 3">
-                <img class="progressive-img" src="Magazines/MG_Elle LQ.jpg" data-src="Magazines/MG_Elle.jpg" alt="Magazine 4" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Fawn LQ.jpg" data-src="Magazines/MG_Fawn.jpg" alt="Magazine 5" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Ila LQ.jpg" data-src="Magazines/MG_Ila.jpg" alt="Magazine 6" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Jrjr LQ.jpg" data-src="Magazines/MG_Jrjr.jpg" alt="Magazine 7" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Julien LQ.jpg" data-src="Magazines/MG_Julien.jpg" alt="Magazine 8" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Kompound LQ.jpg" data-src="Magazines/MG_Kompound.jpg" alt="Magazine 9" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Maril LQ.jpg" data-src="Magazines/MG_Maril.jpg" alt="Magazine 10" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_MIN LQ.jpg" data-src="Magazines/MG_MIN.jpg" alt="Magazine 11" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Prezdent LQ.jpg" data-src="Magazines/MG_Prezdent.jpg" alt="Magazine 12" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Shake LQ.jpg" data-src="Magazines/MG_Shake.jpg" alt="Magazine 13" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Yobs LQ.jpg" data-src="Magazines/MG_Yobs.jpg" alt="Magazine 14" loading="lazy">
-                <img class="progressive-img" src="Magazines/MG_Zhen LQ.jpg" data-src="Magazines/MG_Zhen.jpg" alt="Magazine 15" loading="lazy">
-            </div>
-            <div id="imageModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="modalImage">
-                <div class="modal-footer">
-                    <button id="downloadBtn">Download</button>
-                </div>
-            </div>
-        </div>
-    </main>
-<script src="other-ghost.js"></script>
+<body>
+  <header>
+    <a class="brand" href="index.html"><span class="ghost-mark">👻</span> GachaGhost Arts</a>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="magazines.html">MAGAZINES</a></li>
+        <li><a href="banners.html">BANNERS</a></li>
+        <li><a href="billboards.html">BILLBOARDS</a></li>
+        <li><a href="albums.html">ALBUMS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-intro">
+    <h1>Magazine <span class="accent">Archive</span></h1>
+    <p>Editorial-style magazine spreads and covers designed for the RTFKT community.</p>
+  </div>
+
+  <main>
+    <div class="container" id="magazine-container">
+      <figure><img class="progressive-img" src="Magazines/MG_Ali LQ.jpg" data-src="Magazines/MG_Ali.jpg" alt="Magazine spread: Ali" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Beetle LQ.jpg" data-src="Magazines/MG_Beetle.jpg" alt="Magazine spread: Beetle" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Dremill LQ.jpg" data-src="Magazines/MG_Dremill.jpg" alt="Magazine spread: Dremill" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Elle LQ.jpg" data-src="Magazines/MG_Elle.jpg" alt="Magazine spread: Elle" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Fawn LQ.jpg" data-src="Magazines/MG_Fawn.jpg" alt="Magazine spread: Fawn" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Ila LQ.jpg" data-src="Magazines/MG_Ila.jpg" alt="Magazine spread: Ila" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Jrjr LQ.jpg" data-src="Magazines/MG_Jrjr.jpg" alt="Magazine spread: Jrjr" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Julien LQ.jpg" data-src="Magazines/MG_Julien.jpg" alt="Magazine spread: Julien" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Kompound LQ.jpg" data-src="Magazines/MG_Kompound.jpg" alt="Magazine spread: Kompound" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Maril LQ.jpg" data-src="Magazines/MG_Maril.jpg" alt="Magazine spread: Maril" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_MIN LQ.jpg" data-src="Magazines/MG_MIN.jpg" alt="Magazine spread: MIN" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Prezdent LQ.jpg" data-src="Magazines/MG_Prezdent.jpg" alt="Magazine spread: Prezdent" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Shake LQ.jpg" data-src="Magazines/MG_Shake.jpg" alt="Magazine spread: Shake" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Yobs LQ.jpg" data-src="Magazines/MG_Yobs.jpg" alt="Magazine spread: Yobs" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="Magazines/MG_Zhen LQ.jpg" data-src="Magazines/MG_Zhen.jpg" alt="Magazine spread: Zhen" loading="lazy"></figure>
+    </div>
+  </main>
+
+  <div id="imageModal" class="modal">
+    <button class="close" aria-label="Close">&times;</button>
+    <img class="modal-content" id="modalImage" alt="">
+    <div class="modal-footer">
+      <button id="downloadBtn">Download</button>
+    </div>
+  </div>
+
+  <footer>GachaGhost Arts — built by Imrexx</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

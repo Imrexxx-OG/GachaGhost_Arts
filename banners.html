@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="other-ghost.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
-    <title>Crew-Banners</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banners — GachaGhost Arts</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="banner-body">
-    <header>
-        <h1 class="welcome-header">ARTISTIC BANNERS</h1>
-        <nav>
-            <ul>
-                <li><a href="magazines.html">MAGAZINES</a></li>
-                <li><a href="banners.html">BANNERS</a></li>
-                <li><a href="billboards.html">BILLBOARDS</a></li>
-                <li><a href="albums.html">ALBUMS</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <div id="banner-container">
-                <img class="progressive-img" src="X Banners/BN_badtake1 LQ.jpg" data-src="X Banners/BN_badtake1.jpg" alt="banner 1" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_badtake2 LQ.jpg" data-src="X Banners/BN_badtake2.jpg" alt="banner 2" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_cloneforce1 LQ.jpg" data-src="X Banners/BN_cloneforce1.jpg" alt="banner 3" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_cloneforce2 LQ.jpg" data-src="X Banners/BN_cloneforce2.jpg" alt="banner 4" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_cloneforce3 LQ.jpg" data-src="X Banners/BN_cloneforce3.jpg" alt="banner 5" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_cloneforce4 LQ.jpg" data-src="X Banners/BN_cloneforce4.jpg" alt="banner 6" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_demon1 LQ.jpg" data-src="X Banners/BN_demon1.jpg" alt="banner 7" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_demon2 LQ.jpg" data-src="X Banners/BN_demon2.jpg" alt="banner 8" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_LimeGreen1 LQ.jpg" data-src="X Banners/BN_LimeGreen1.jpg" alt="banner 9" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_LimeGreen2 LQ.jpg" data-src="X Banners/BN_LimeGreen2.jpg" alt="banner 10" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Queens1 LQ.jpg" data-src="X Banners/BN_Queens1.jpg" alt="banner 11" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Queens2 LQ.jpg" data-src="X Banners/BN_Queens2.jpg" alt="banner 12" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Reptile LQ.jpg" data-src="X Banners/BN_Reptile.jpg" alt="banner 13" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Robot LQ.jpg" data-src="X Banners/BN_Robot.jpg" alt="banner 14" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Robot2 LQ.jpg" data-src="X Banners/BN_Robot2.jpg" alt="banner 15" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_Robot3 LQ.jpg" data-src="X Banners/BN_Robot3.jpg" alt="banner 16" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_undead1 LQ.jpg" data-src="X Banners/BN_undead1.jpg" alt="banner 17" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_undead2 LQ.jpg" data-src="X Banners/BN_undead1.jpg" alt="banner 18" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_YJG1 LQ.jpg" data-src="X Banners/BN_YJG1.jpg" alt="banner 19" loading="lazy">
-                <img class="progressive-img" src="X Banners/BN_YJG2 LQ.jpg" data-src="X Banners/BN_YJG2.jpg" alt="banner 20" loading="lazy">
-            </div>
-        </div>
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImage">
-            <div class="modal-footer">
-                <button id="downloadBtn">Download</button>
-            </div>
-        </div>
-        </div>
-    </main>
+<body>
+  <header>
+    <a class="brand" href="index.html"><span class="ghost-mark">👻</span> GachaGhost Arts</a>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="magazines.html">MAGAZINES</a></li>
+        <li><a href="banners.html">BANNERS</a></li>
+        <li><a href="billboards.html">BILLBOARDS</a></li>
+        <li><a href="albums.html">ALBUMS</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<script src="other-ghost.js"></script>
+  <div class="page-intro">
+    <h1>Artistic <span class="accent">Banners</span></h1>
+    <p>X / Twitter banners commissioned for builders across the RTFKT and Web3 community.</p>
+  </div>
+
+  <main>
+    <div class="container" id="banner-container">
+      <figure><img class="progressive-img" src="X Banners/BN_badtake1 LQ.jpg" data-src="X Banners/BN_badtake1.jpg" alt="Banner: Bad Take" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_badtake2 LQ.jpg" data-src="X Banners/BN_badtake2.jpg" alt="Banner: Bad Take, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_cloneforce1 LQ.jpg" data-src="X Banners/BN_cloneforce1.jpg" alt="Banner: Clone Force" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_cloneforce2 LQ.jpg" data-src="X Banners/BN_cloneforce2.jpg" alt="Banner: Clone Force, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_cloneforce3 LQ.jpg" data-src="X Banners/BN_cloneforce3.jpg" alt="Banner: Clone Force, variant 3" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_cloneforce4 LQ.jpg" data-src="X Banners/BN_cloneforce4.jpg" alt="Banner: Clone Force, variant 4" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_demon1 LQ.jpg" data-src="X Banners/BN_demon1.jpg" alt="Banner: Demon" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_demon2 LQ.jpg" data-src="X Banners/BN_demon2.jpg" alt="Banner: Demon, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_LimeGreen1 LQ.jpg" data-src="X Banners/BN_LimeGreen1.jpg" alt="Banner: Lime Green" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_LimeGreen2 LQ.jpg" data-src="X Banners/BN_LimeGreen2.jpg" alt="Banner: Lime Green, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Queens1 LQ.jpg" data-src="X Banners/BN_Queens1.jpg" alt="Banner: Queens" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Queens2 LQ.jpg" data-src="X Banners/BN_Queens2.jpg" alt="Banner: Queens, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Reptile LQ.jpg" data-src="X Banners/BN_Reptile.jpg" alt="Banner: Reptile" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Robot LQ.jpg" data-src="X Banners/BN_Robot.jpg" alt="Banner: Robot" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Robot2 LQ.jpg" data-src="X Banners/BN_Robot2.jpg" alt="Banner: Robot, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_Robot3 LQ.jpg" data-src="X Banners/BN_Robot3.jpg" alt="Banner: Robot, variant 3" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_undead1 LQ.jpg" data-src="X Banners/BN_undead1.jpg" alt="Banner: Undead" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_undead2 LQ.jpg" data-src="X Banners/BN_undead2.jpg" alt="Banner: Undead, variant 2" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_YJG1 LQ.jpg" data-src="X Banners/BN_YJG1.jpg" alt="Banner: YJG" loading="lazy"></figure>
+      <figure><img class="progressive-img" src="X Banners/BN_YJG2 LQ.jpg" data-src="X Banners/BN_YJG2.jpg" alt="Banner: YJG, variant 2" loading="lazy"></figure>
+    </div>
+  </main>
+
+  <div id="imageModal" class="modal">
+    <button class="close" aria-label="Close">&times;</button>
+    <img class="modal-content" id="modalImage" alt="">
+    <div class="modal-footer">
+      <button id="downloadBtn">Download</button>
+    </div>
+  </div>
+
+  <footer>GachaGhost Arts — built by Imrexx</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ghost.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
-    <title>Main Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GachaGhost Arts</title>
+  <meta name="description" content="GachaGhost Arts — AI and Photoshop-driven banners, billboards, albums and magazines from the RTFKT / Web3 art community.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="main-body">
+<body>
   <header>
-      <h1 id="gacha">Gacha_Ghost 👻</h1>
-      <button id="menu-toggle" class="menu-toggle">☰</button>
-      <nav id="nav-bar" class="nav-bar">
-          <ul>
-            <li><a href="magazines.html">MAGAZINES</a></li>
-            <li><a href="banners.html">BANNERS</a></li>
-            <li><a href="billboards.html">BILLBOARDS</a></li>
-            <li><a href="albums.html">ALBUMS</a></li>
-          </ul>
-      </nav>
+    <a class="brand" href="index.html">
+      <span class="ghost-mark">👻</span> GachaGhost Arts
+    </a>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="magazines.html">MAGAZINES</a></li>
+        <li><a href="banners.html">BANNERS</a></li>
+        <li><a href="billboards.html">BILLBOARDS</a></li>
+        <li><a href="albums.html">ALBUMS</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="centered-content">
-      <h2>Legend of Gacha_Ghost 👻</h2>
-      <p style="margin-top: 1rem;">Gacha_Ghost is a visionary in the RTFKT⚡ community, blending AI and Photoshop to create captivating digital art.</p>
-      <p style="margin-top: 1rem;">His work goes beyond aesthetics pushing boundaries, inspiring others, and making a lasting impact on Web3.</p>
-  </div>
+  <main>
+    <section class="hero">
+      <span class="ghost-mark">👻</span>
+      <h1>Legend of <span class="accent">Gacha_Ghost</span></h1>
+      <p>
+        A visionary in the RTFKT⚡ community, blending AI and Photoshop to
+        create captivating digital art — banners, billboards, album covers
+        and magazine spreads made for builders across Web3.
+      </p>
+      <p>
+        The work goes beyond aesthetics: pushing boundaries, inspiring
+        others, and leaving a mark on the space.
+      </p>
+      <div class="hero-links">
+        <a href="magazines.html">Magazines</a>
+        <a href="banners.html">Banners</a>
+        <a href="billboards.html">Billboards</a>
+        <a href="albums.html">Albums</a>
+      </div>
+    </section>
+  </main>
 
-<script src="ghost.js"></script>   
+  <footer>GachaGhost Arts — built by Imrexx</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
