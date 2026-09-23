@@ -71,6 +71,12 @@ header {
   background: rgba(10, 9, 8, 0.88);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+header.scrolled {
+  padding: 0.55rem 1.5rem;
+  background: rgba(10, 9, 8, 0.97);
 }
 
 .brand {
@@ -193,6 +199,18 @@ nav a.active {
   line-height: 1.5;
 }
 
+.page-intro .count {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
 /* ---------- Gallery grid ---------- */
 
 main {
@@ -201,25 +219,24 @@ main {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 1.5rem auto 4rem;
   padding: 0 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.9rem;
+  columns: 2 220px;
+  column-gap: 0.9rem;
 }
 
 @media (min-width: 600px) {
   .container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.1rem;
+    columns: 3 240px;
+    column-gap: 1.1rem;
   }
 }
 
 @media (min-width: 960px) {
   .container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    columns: 4 260px;
+    column-gap: 1.25rem;
   }
 }
 
@@ -229,20 +246,41 @@ main {
   overflow: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  aspect-ratio: 1 / 1;
   cursor: pointer;
+  break-inside: avoid;
+  margin-bottom: 0.9rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (min-width: 600px) {
+  .container figure {
+    margin-bottom: 1.1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .container figure {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.container figure.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .container img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease, filter 0.35s ease;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
   filter: saturate(0.92);
 }
 
 .container figure:hover img {
-  transform: scale(1.06);
+  transform: scale(1.045);
   filter: saturate(1.05);
 }
 
@@ -263,6 +301,7 @@ main {
   opacity: 0;
   transform: translateY(-4px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
 
 .container figure:hover::after {
@@ -272,6 +311,29 @@ main {
 
 .container img.is-loading {
   filter: blur(8px) saturate(0.8);
+}
+
+.container figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 0.75rem 0.6rem;
+  background: linear-gradient(to top, rgba(6, 5, 5, 0.92), transparent);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.container figure:hover figcaption,
+.container figure:focus-visible figcaption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ---------- Lightbox / modal ---------- */
@@ -295,10 +357,16 @@ main {
 
 .modal-content {
   max-width: min(90vw, 900px);
-  max-height: 72vh;
+  max-height: 68vh;
   object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 0 60px rgba(225, 29, 46, 0.15);
+  animation: modal-pop 0.2s ease;
+}
+
+@keyframes modal-pop {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .close {
@@ -317,10 +385,58 @@ main {
   color: var(--red);
 }
 
+.modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(21, 18, 18, 0.7);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-nav:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.modal-prev { left: 1rem; }
+.modal-next { right: 1rem; }
+
+@media (max-width: 640px) {
+  .modal-nav { width: 38px; height: 38px; font-size: 1.1rem; }
+  .modal-prev { left: 0.4rem; }
+  .modal-next { right: 0.4rem; }
+}
+
+.modal-counter {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.5rem;
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+}
+
 .modal-footer {
   margin-top: 1.1rem;
   display: flex;
   gap: 0.75rem;
+  align-items: center;
+}
+
+.modal-caption {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
 }
 
 #downloadBtn {
@@ -418,6 +534,96 @@ button:focus-visible,
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
   }
+}
+
+/* ---------- Scroll to top ---------- */
+
+#toTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 900;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(21, 18, 18, 0.85);
+  color: var(--ink);
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+
+#toTop.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#toTop:hover {
+  background: var(--red);
+}
+
+/* ---------- Home teaser mosaic ---------- */
+
+.teaser {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 1.25rem;
+}
+
+.teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+@media (min-width: 700px) {
+  .teaser-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+.teaser-card {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 5;
+  text-decoration: none;
+}
+
+.teaser-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.teaser-card:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.teaser-card span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 0.75rem 0.6rem;
+  background: linear-gradient(to top, rgba(6, 5, 5, 0.92), transparent);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
 }
 
 /* ---------- Footer ---------- */
